@@ -30,6 +30,10 @@ Before Update, After Update
 Before Delete, After Delete
 
 
+SHOW TRIGGERS
+[{FROM | IN} database_name]
+[LIKE 'pattern' | WHERE search_condition];
+
 */
 
 -- BEFOR INSERT
