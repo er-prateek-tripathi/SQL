@@ -1,0 +1,15 @@
+SELECT * FROM Orders;
+
+DELIMITER //
+CREATE TRIGGER OrderQtyCheck
+BEFORE INSERT
+ON Orders FOR EACH ROW
+BEGIN
+	IF NEW.Quantity < 0
+		THEN SET NEW.Quantity = 0;
+	END IF;
+END;
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS lucky_shrub.OrderQtyCheck;
+
